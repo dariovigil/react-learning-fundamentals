@@ -1,15 +1,18 @@
-const React = require('react')
-const Popular = require('./Popular')
+import React from 'react'
+import Popular from './Popular'
+import {BrowserRouter, Route} from 'react-router-dom'
+
 
 class App extends React.Component {
     render() {
         return (
-            <div className = 'container'>
-                <Popular />
-                {/* Hello World! */}
-            </div>
+            <BrowserRouter>
+                <div className='container'>
+                    <Route path='/popular' component={Popular} />
+                </div>
+            </BrowserRouter>
         )
     }
 }
 
-module.exports = App
+export default App
