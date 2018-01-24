@@ -1,18 +1,22 @@
 import React from 'react'
 import Popular from './Popular'
-import {BrowserRouter, Route} from 'react-router-dom'
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import Nav from './Nav';
+import Home from './Home';
+import Battle from './Battle';
 
-
-class App extends React.Component {
-    render() {
-        return (
+const App = () => (
             <BrowserRouter>
                 <div className='container'>
-                    <Route path='/popular' component={Popular} />
+                    <Nav />
+                        <Switch>
+                            <Route exact path='/' component={Home} />
+                            <Route exact path='/battle' component={Battle} />
+                            <Route path='/popular' component={Popular} />
+                            <Route render= {() => (<p>Not found</p>)}/>
+                        </Switch>
                 </div>
             </BrowserRouter>
         )
-    }
-}
 
 export default App

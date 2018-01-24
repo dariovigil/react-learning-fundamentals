@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import api from '../utils/api';
 
-function SelectLanguage(props) {
+const SelectLanguage = (props) => {
     const languages = ['All', 'Javascript', 'Ruby', 'Java', 'CSS', 'Python'];
     return (
         <ul className='languages'>
@@ -20,8 +20,7 @@ function SelectLanguage(props) {
     )
 }
 
-function RepoGrid(props) {
-    return (
+const RepoGrid = (props) => (
         <ul className='popular-list' >
             {props.repos.map(function (repo, index) {
                 return (
@@ -42,7 +41,6 @@ function RepoGrid(props) {
             })}
         </ul>
     )
-}
 
 RepoGrid.propTypes = {
     repos: PropTypes.array.isRequired
