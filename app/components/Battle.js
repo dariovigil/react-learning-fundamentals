@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import PlayerPreview from './PlayerPreview';
 import PlayerInput from './PlayerInput';
+import Loading from './Loading';
+
 
 class Battle extends React.Component {
   constructor(props) {
